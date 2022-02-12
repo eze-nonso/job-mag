@@ -1,0 +1,22 @@
+<mat-toolbar class="mat-toolbar-higher" color="accent" fxLayout fxLayoutAlign="space-between" fxLayoutGap="36px">
+  <form [formGroup]="searchParam" fxLayout fxLayoutAlign="start center" fxLayoutGap="13px">
+    <ng-container *ngFor="let item of formData">
+      <ng-template #selectForm>
+        <mat-form-field appearance="outline" fxFlex="auto">
+          <mat-select *ngIf="item.formType === 'select'" [formControlName]="item.name" [placeholder]="item.placeholder"
+                      class="svg-arrow">
+            <mat-option *ngFor="let option of options" [value]="option">{{option | titlecase}}</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+      </ng-template>
+      <mat-form-field *ngIf="item.formType==='input'; else selectForm" appearance="outline"
+                      fxFlex="auto">
+        <input [formControlName]="item.name"
+               [placeholder]="item.placeholder"
+               matInput type="text">
+      </mat-form-field>
+    </ng-container>
+  </form>
+  <button class="mat-body" color="primary" mat-raised-button>More Filter</button>
+</mat-toolbar>

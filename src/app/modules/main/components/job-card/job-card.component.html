@@ -1,0 +1,86 @@
+<mat-card fxLayout="column nowrap">
+  <div [ngClass]="{'font-14': expandDetail, 'large': expandDetail}" class="content" fxFlex fxLayout
+       fxLayoutAlign="space-between" fxLayoutGap="14px">
+    <div class="image-container" fxFlex="nogrow">
+      <img [src]="job.jobImage" alt="job image" mat-card-sm-image>
+    </div>
+    <div [fxFlex]="textContainerFlex" [fxLayoutGap]="expandedDetailGap" class="text-container" fxLayout="column nowrap">
+      <div fxLayout fxLayoutAlign="space-between">
+        <h2 class="title mat-body">{{job.description}}</h2>
+        <ng-container *ngIf="expandDetail" [ngTemplateOutlet]="youAreReady"></ng-container>
+      </div>
+
+      <ng-container *ngIf="expandDetail; then expandedView; else simpleView">
+      </ng-container>
+    </div>
+    <div *ngIf="!expandDetail" class="other-container" fxFlex="nogrow" fxLayout="column nowrap"
+         fxLayoutAlign="space-between">
+      <ng-container [ngTemplateOutlet]="youAreReady">
+      </ng-container>
+      <ng-container [ngTemplateOutlet]="jobDetail"></ng-container>
+    </div>
+  </div>
+  <div class="detail">
+    <ng-container *ngIf="expandDetail">
+      <div class="detail-container" fxFlex="1 1 100%">
+        <hr class="divider">
+        <div class="role-description">
+          <h4 class="mat-body">Role Requirement</h4>
+          <p class="mat-body requirement">{{job?.requirement}}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</mat-card>
+
+<ng-template #expandedView>
+  <p class="expanded-location mat-body">
+    <mat-icon class="icon" svgIcon="location">{{job.location}}</mat-icon>&nbsp;
+    {{job.location | titlecase}}</p>
+  <p class="expanded-other mat-body">Desired Experience Level: <span
+    class="desired-level">{{job.desiredLevel | titlecase}}</span>
+    &nbsp;
+    <mat-icon class="icon" svgIcon="ellipse"></mat-icon>
+    &nbsp;
+    Desired Readiness Score: <span class="desired-score">{{job.desiredScore}}%</span>
+  </p>
+  <ng-container [ngTemplateOutlet]="otherInfo"></ng-container>
+  <p class="expanded-info">
+    <span>{{job.totalApplicants}} Applicants</span><span>{{job.category | titlecase}}</span>
+  </p>
+  <div class="expanded-button-group" fxLayout fxLayoutAlign="space-between">
+    <div fxLayout fxLayoutGap="20px">
+      <button color="primary" mat-flat-button>Apply</button>
+      <ng-container [ngTemplateOutlet]="jobDetail"></ng-container>
+    </div>
+    <button class="generate-resume" mat-flat-button>Generate Custom Resume</button>
+  </div>
+</ng-template>
+
+<ng-template #simpleView>
+  <p class="mat-body location">{{job.company | titlecase}}, {{job.location | titlecase}}</p>
+  <ng-container [ngTemplateOutlet]="otherInfo"></ng-container>
+</ng-template>
+
+<ng-template #youAreReady>
+  <div class="top-right-bar mat-body">
+    <p>You are</p>
+    <p class="highlight">{{job.percentReady}}%</p>
+    <p>Ready</p>
+  </div>
+</ng-template>
+
+<ng-template #otherInfo>
+  <p [class.other-detail-large]="expandDetail" class="other-detail mat-body">{{job.slotsAvailable}} Slots Available
+    &nbsp;
+    <mat-icon class="icon" svgIcon="ellipse"></mat-icon>
+    &nbsp;
+    Apply
+    by {{job.deadLineLong}}</p>
+</ng-template>
+
+<ng-template #jobDetail>
+  <a class="job-detail" fxFlexAlign="end" href="./">
+    <img alt="job detail" src="assets/images/detail.png">
+  </a>
+</ng-template>
