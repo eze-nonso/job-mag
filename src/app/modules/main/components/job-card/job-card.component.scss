@@ -2,7 +2,7 @@
 @import "src/custom-theme";
 
 .content {
-  @mixin you-are-ready {
+  @mixin you-are-ready($size: 'small') {
     .top-right-bar {
       background: $job-card-other-bg-color;
       line-height: 18.76px;
@@ -20,7 +20,12 @@
         &.highlight {
           font-weight: bold;
           color: map-get($job-mag-primary, 500);
-          font-size: 14px;
+          @if ($size == 'large') {
+            font-weight: 700;
+            font-size: 18px;
+          } @else {
+            font-size: 14px;
+          };
         }
       }
     }
@@ -67,11 +72,6 @@
       height: 66px;
       font-size: 12px;
       line-height: 134.02%;
-
-      .highlight {
-        font-weight: 700 !important;
-        font-size: 18px !important;
-      }
     }
 
     .job-detail {
@@ -93,7 +93,7 @@
   }
 
   .text-container {
-    @include you-are-ready;
+    @include you-are-ready('large');
     @include job-detail;
 
     .title {

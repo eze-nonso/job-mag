@@ -89,7 +89,9 @@ $job-mag-theme: mat.define-light-theme((
   )
 ));
 
-$job-mag-typography-config: mat.define-typography-config($font-family: 'Inter, serif');
+$job-mag-typography: mat.define-typography-level('14px', $font-weight: 500);
+
+$job-mag-typography-config: mat.define-typography-config($font-family: 'Inter, serif', $body-1: $job-mag-typography);
 
 @include mat.core($job-mag-typography-config);
 // Include theme styles for core and each component used in your app.

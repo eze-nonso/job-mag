@@ -6,7 +6,7 @@
     </div>
     <div [fxFlex]="textContainerFlex" [fxLayoutGap]="expandedDetailGap" class="text-container" fxLayout="column nowrap">
       <div fxLayout fxLayoutAlign="space-between">
-        <h2 class="title mat-body">{{job.description}}</h2>
+        <h2 class="title">{{job.description}}</h2>
         <ng-container *ngIf="expandDetail" [ngTemplateOutlet]="youAreReady"></ng-container>
       </div>
 
@@ -25,8 +25,8 @@
       <div class="detail-container" fxFlex="1 1 100%">
         <hr class="divider">
         <div class="role-description">
-          <h4 class="mat-body">Role Requirement</h4>
-          <p class="mat-body requirement">{{job?.requirement}}</p>
+          <h4>Role Requirement</h4>
+          <p class="requirement">{{job?.requirement}}</p>
         </div>
       </div>
     </ng-container>
@@ -34,10 +34,10 @@
 </mat-card>
 
 <ng-template #expandedView>
-  <p class="expanded-location mat-body">
+  <p class="expanded-location">
     <mat-icon class="icon" svgIcon="location">{{job.location}}</mat-icon>&nbsp;
     {{job.location | titlecase}}</p>
-  <p class="expanded-other mat-body">Desired Experience Level: <span
+  <p class="expanded-other">Desired Experience Level: <span
     class="desired-level">{{job.desiredLevel | titlecase}}</span>
     &nbsp;
     <mat-icon class="icon" svgIcon="ellipse"></mat-icon>
@@ -58,12 +58,12 @@
 </ng-template>
 
 <ng-template #simpleView>
-  <p class="mat-body location">{{job.company | titlecase}}, {{job.location | titlecase}}</p>
+  <p class="location">{{job.company | titlecase}}, {{job.location | titlecase}}</p>
   <ng-container [ngTemplateOutlet]="otherInfo"></ng-container>
 </ng-template>
 
 <ng-template #youAreReady>
-  <div class="top-right-bar mat-body">
+  <div class="top-right-bar">
     <p>You are</p>
     <p class="highlight">{{job.percentReady}}%</p>
     <p>Ready</p>
@@ -71,7 +71,7 @@
 </ng-template>
 
 <ng-template #otherInfo>
-  <p [class.other-detail-large]="expandDetail" class="other-detail mat-body">{{job.slotsAvailable}} Slots Available
+  <p [class.other-detail-large]="expandDetail" class="other-detail">{{job.slotsAvailable}} Slots Available
     &nbsp;
     <mat-icon class="icon" svgIcon="ellipse"></mat-icon>
     &nbsp;
