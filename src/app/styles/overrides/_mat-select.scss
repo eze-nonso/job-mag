@@ -3,3 +3,7 @@
 .svg-arrow .mat-select-arrow {
   opacity: 0;
 }
+
+.mat-select-panel {
+  width: calc(100% + 55px);
+}

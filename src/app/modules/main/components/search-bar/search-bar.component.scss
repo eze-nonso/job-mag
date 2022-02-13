@@ -1,9 +1,12 @@
+@import 'src/app/styles/variables';
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
 form {
   font-size: 14px;
+  overflow: hidden;
 }
 
 button {
@@ -11,7 +14,9 @@ button {
 }
 
 mat-form-field {
-  max-width: 161px;
+  .icon {
+    color: $search-bar-icon-color;
+  }
 }
 
 .mat-toolbar-higher {

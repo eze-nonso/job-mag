@@ -17,4 +17,8 @@ export class JobCardComponent {
   public get expandedDetailGap() {
     return this.expandDetail ? '8px' : '';
   }
+
+  public get jobDetailAlign() {
+    return this.expandDetail ? 'center' : 'end';
+  }
 }

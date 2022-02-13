@@ -9,15 +9,15 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class SearchBarComponent implements OnInit {
 
   formData = [{
-    placeholder: 'Select Job role', formType: 'select', name: 'jobRole'
+    placeholder: 'Select Job role', formType: 'select', name: 'jobRole', flexBasis: '0 1 161px'
   }, {
-    placeholder: 'Select required skills', formType: 'select', name: 'requiredSkills'
+    placeholder: 'Select required skills', formType: 'select', name: 'requiredSkills', flexBasis: '0 1 187px'
   }, {
-    placeholder: 'Select experience level', formType: 'select', name: 'experienceLevel'
+    placeholder: 'Select experience level', formType: 'select', name: 'experienceLevel', flexBasis: '0 1 201px'
   }, {
-    placeholder: 'Search location', formType: 'input', name: 'searchLocation'
+    placeholder: 'Search location', formType: 'input', name: 'searchLocation', flexBasis: '0 1 157px'
   }, {
-    placeholder: 'Select Job Type', formType: 'select', name: 'jobType'
+    placeholder: 'Select Job Type', formType: 'select', name: 'jobType', flexBasis: '0 1 161px'
   }];
 
   public searchParam!: FormGroup;

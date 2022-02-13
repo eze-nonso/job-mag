@@ -8,5 +8,6 @@ import {jobs} from "src/app/modules/main/mocks/mock-jobs";
 })
 export class MainComponent {
   jobs = jobs;
+  numberOfOpportunities = 5217;
 }
 

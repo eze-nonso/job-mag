@@ -1,7 +1,15 @@
-<app-search-bar></app-search-bar>
-<div class="separator"></div>
-<app-job-card [job]="jobs[0]"></app-job-card>
-<div class="separator">
+<div class="container" fxLayout="column nowrap" fxLayoutGap="20px">
+  <h1>Jobs & Opportunities</h1>
+  <app-search-bar></app-search-bar>
+  <h2>{{numberOfOpportunities}} Apprenticeship Jobs In London</h2>
+  <div class="scroll-container" fxLayout fxLayoutGap="15px">
+    <div class="scroll-panel" fxFlex fxLayout="column nowrap" fxLayoutGap="11px">
+      <ng-container *ngFor="let job of jobs">
+        <app-job-card [job]="job"></app-job-card>
+      </ng-container>
+    </div>
+    <div class="scroll-panel" fxFlex="55%">
+      <app-job-card [expandDetail]="true" [job]="jobs[1]"></app-job-card>
+    </div>
+  </div>
 </div>
-<app-job-card [expandDetail]="true" [job]="jobs[1]"></app-job-card>
-<div class="separator"></div>
