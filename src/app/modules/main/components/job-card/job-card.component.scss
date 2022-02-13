@@ -1,6 +1,10 @@
 @import "src/app/styles/main";
 @import "src/custom-theme";
 
+mat-card {
+  height: 100%;
+}
+
 .job-card-content {
   @mixin you-are-ready($size: 'small') {
     .top-right-bar {

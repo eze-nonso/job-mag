@@ -1,4 +1,4 @@
-<mat-toolbar class="mat-toolbar-higher" color="accent" fxLayout fxLayoutAlign="space-between" fxLayoutGap="36px">
+<mat-toolbar class="mat-toolbar-higher" color="accent" fxLayout fxLayoutAlign="start" fxLayoutGap="36px">
   <form [formGroup]="searchParam" fxFlex fxLayout fxLayoutAlign="start center" fxLayoutGap="13px">
     <ng-container *ngFor="let item of formData">
       <ng-template #selectForm>
@@ -18,5 +18,5 @@
       </mat-form-field>
     </ng-container>
   </form>
-  <button color="primary" fxFlex="nogrow" mat-raised-button>More Filter</button>
+  <button color="primary" fxFlex="102px" mat-raised-button>More Filter</button>
 </mat-toolbar>

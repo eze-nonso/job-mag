@@ -1,15 +1,23 @@
-<div class="container" fxLayout="column nowrap" fxLayoutGap="20px">
-  <h1 class="title">Jobs & Opportunities</h1>
-  <app-search-bar></app-search-bar>
-  <h2 class="subtitle">{{numberOfOpportunities}} Apprenticeship Jobs In London</h2>
-  <div class="scroll-container" fxLayout fxLayoutGap="4px">
-    <div class="scroll-panel" fxFlex fxLayout="column nowrap" fxLayoutGap="11px">
-      <ng-container *ngFor="let job of jobs">
-        <app-job-card [job]="job"></app-job-card>
-      </ng-container>
+<div class="patch" fxLayout>
+  <div fxFlex="262px"><img src="assets/images/side-bar.png" alt="side bar"></div>
+  <div fxLayout="column nowrap">
+    <div class="profile" fxFlex>
+      <img src="assets/images/profile.png" alt="profile section">
     </div>
-    <div class="scroll-panel" fxFlex="55%">
-      <app-job-card [expandDetail]="true" [job]="jobs[1]"></app-job-card>
+    <div class="container" fxLayout="column nowrap" fxLayoutGap="20px">
+      <h1 class="title">Jobs & Opportunities</h1>
+      <app-search-bar></app-search-bar>
+      <h2 class="subtitle">{{numberOfOpportunities}} Apprenticeship Jobs In London</h2>
+      <div class="scroll-container" fxLayout fxLayoutGap="4px">
+        <div class="scroll-panel" fxFlex="442.5px" fxLayout="column nowrap" fxLayoutGap="11px">
+          <ng-container *ngFor="let job of jobs">
+            <app-job-card [job]="job" style="height: 154px; min-height: 154px;"></app-job-card>
+          </ng-container>
+        </div>
+        <div class="scroll-panel" fxFlex="671.5px">
+          <app-job-card [expandDetail]="true" [job]="jobs[1]"></app-job-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>

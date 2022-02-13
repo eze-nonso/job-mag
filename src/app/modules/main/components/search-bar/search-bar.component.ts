@@ -13,7 +13,7 @@ export class SearchBarComponent implements OnInit {
   }, {
     placeholder: 'Select required skills', formType: 'select', name: 'requiredSkills', flexBasis: '0 1 187px'
   }, {
-    placeholder: 'Select experience level', formType: 'select', name: 'experienceLevel', flexBasis: '0 1 201px'
+    placeholder: 'Select experience level', formType: 'select', name: 'experienceLevel', flexBasis: '0 1 209px'
   }, {
     placeholder: 'Search location', formType: 'input', name: 'searchLocation', flexBasis: '0 1 157px'
   }, {
