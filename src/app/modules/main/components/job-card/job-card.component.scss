@@ -1,7 +1,7 @@
 @import "src/app/styles/main";
 @import "src/custom-theme";
 
-.app-content {
+.job-card-content {
   @mixin you-are-ready($size: 'small') {
     .top-right-bar {
       background: $job-card-other-bg-color;

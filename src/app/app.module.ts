@@ -7,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 
 const ROUTES: Routes = [{
   path: '',
-  component: AppComponent,
   loadChildren: () => import('src/app/modules/main/main.module')
     .then(m => m.MainModule)
 }];

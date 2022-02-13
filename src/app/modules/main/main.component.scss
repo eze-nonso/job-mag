@@ -1,8 +1,42 @@
-.separator {
-  height: 50px;
+@import 'src/app/styles/variables';
+
+.container {
+  min-width: 1110px;
+  max-width: 1500px;
+
+  .title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .subtitle {
+    line-height: 156.02%;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .scroll-container {
+    overflow: hidden;
+    height: 55vh;
+
+    .scroll-panel {
+      padding-right: 3px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        background: $scroll-panel-scrollbar-track-color;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border: 2px solid transparent;
+        border-radius: 14px;
+        background-color: $scroll-panel-scrollbar-color;
+        background-clip: content-box;
+        width: 4px;
+      }
+    }
+  }
 }
 
-.scroll-container {
-  overflow: hidden;
-  height: 55vh;
-}

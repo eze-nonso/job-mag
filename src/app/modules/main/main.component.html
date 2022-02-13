@@ -1,8 +1,8 @@
 <div class="container" fxLayout="column nowrap" fxLayoutGap="20px">
-  <h1>Jobs & Opportunities</h1>
+  <h1 class="title">Jobs & Opportunities</h1>
   <app-search-bar></app-search-bar>
-  <h2>{{numberOfOpportunities}} Apprenticeship Jobs In London</h2>
-  <div class="scroll-container" fxLayout fxLayoutGap="15px">
+  <h2 class="subtitle">{{numberOfOpportunities}} Apprenticeship Jobs In London</h2>
+  <div class="scroll-container" fxLayout fxLayoutGap="4px">
     <div class="scroll-panel" fxFlex fxLayout="column nowrap" fxLayoutGap="11px">
       <ng-container *ngFor="let job of jobs">
         <app-job-card [job]="job"></app-job-card>

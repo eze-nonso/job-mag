@@ -1,3 +1,9 @@
-.content {
-  margin: 80px 80px 0;
+.app-content {
+  padding-right: 50px;
+  padding-left: 50px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
